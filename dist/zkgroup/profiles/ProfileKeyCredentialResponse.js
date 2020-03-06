@@ -17,4 +17,4 @@ class ProfileKeyCredentialResponse extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCredentialResponse;
-ProfileKeyCredentialResponse.SIZE = 488;
+ProfileKeyCredentialResponse.SIZE = 520;

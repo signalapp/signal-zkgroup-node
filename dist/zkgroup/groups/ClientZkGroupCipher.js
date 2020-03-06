@@ -37,25 +37,27 @@ class ClientZkGroupCipher {
         }
         return UUIDUtil_1.toUUID(newContents);
     }
-    encryptProfileKey(profileKey) {
+    encryptProfileKey(profileKey, uuid) {
         const random = new FFICompatArray_1.default(crypto_1.randomBytes(Constants_1.RANDOM_LENGTH));
-        return this.encryptProfileKeyWithRandom(random, profileKey);
+        return this.encryptProfileKeyWithRandom(random, profileKey, uuid);
     }
-    encryptProfileKeyWithRandom(random, profileKey) {
+    encryptProfileKeyWithRandom(random, profileKey, uuid) {
         const newContents = new FFICompatArray_1.default(ProfileKeyCiphertext_1.default.SIZE);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
         const profileKeyContents = profileKey.getContents();
-        const ffi_return = Native_1.default.FFI_GroupSecretParams_encryptProfileKeyDeterministic(groupSecretParamsContents, groupSecretParamsContents.length, random, random.length, profileKeyContents, profileKeyContents.length, newContents, newContents.length);
+        const uuidContents = UUIDUtil_1.fromUUID(uuid);
+        const ffi_return = Native_1.default.FFI_GroupSecretParams_encryptProfileKeyDeterministic(groupSecretParamsContents, groupSecretParamsContents.length, random, random.length, profileKeyContents, profileKeyContents.length, uuidContents, uuidContents.length, newContents, newContents.length);
         if (ffi_return != Native_1.FFI_RETURN_OK) {
             throw new ZkGroupError_1.default('FFI_RETURN!=OK');
         }
         return new ProfileKeyCiphertext_1.default(newContents);
     }
-    decryptProfileKey(profileKeyCiphertext) {
+    decryptProfileKey(profileKeyCiphertext, uuid) {
         const newContents = new FFICompatArray_1.default(ProfileKey_1.default.SIZE);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
         const profileKeyCiphertextContents = profileKeyCiphertext.getContents();
-        const ffi_return = Native_1.default.FFI_GroupSecretParams_decryptProfileKey(groupSecretParamsContents, groupSecretParamsContents.length, profileKeyCiphertextContents, profileKeyCiphertextContents.length, newContents, newContents.length);
+        const uuidContents = UUIDUtil_1.fromUUID(uuid);
+        const ffi_return = Native_1.default.FFI_GroupSecretParams_decryptProfileKey(groupSecretParamsContents, groupSecretParamsContents.length, profileKeyCiphertextContents, profileKeyCiphertextContents.length, uuidContents, uuidContents.length, newContents, newContents.length);
         if (ffi_return == Native_1.FFI_RETURN_INPUT_ERROR) {
             throw new VerificationFailedException_1.default('FFI_RETURN_INPUT_ERROR');
         }
@@ -65,16 +67,20 @@ class ClientZkGroupCipher {
         return new ProfileKey_1.default(newContents);
     }
     encryptBlob(plaintext) {
-        const newContents = FFICompatArray_1.default(plaintext.length);
+        const random = new FFICompatArray_1.default(crypto_1.randomBytes(Constants_1.RANDOM_LENGTH));
+        return this.encryptBlobWithRandom(random, plaintext);
+    }
+    encryptBlobWithRandom(random, plaintext) {
+        const newContents = FFICompatArray_1.default(plaintext.length + 28);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
-        const ffi_return = Native_1.default.FFI_GroupSecretParams_encryptBlob(groupSecretParamsContents, groupSecretParamsContents.length, plaintext, plaintext.length, newContents, newContents.length);
+        const ffi_return = Native_1.default.FFI_GroupSecretParams_encryptBlobDeterministic(groupSecretParamsContents, groupSecretParamsContents.length, random, random.length, plaintext, plaintext.length, newContents, newContents.length);
         if (ffi_return != Native_1.FFI_RETURN_OK) {
             throw new ZkGroupError_1.default('FFI_RETURN!=OK');
         }
         return newContents;
     }
     decryptBlob(blobCiphertext) {
-        const newContents = new FFICompatArray_1.default(blobCiphertext.length);
+        const newContents = new FFICompatArray_1.default(blobCiphertext.length - 28);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
         const ffi_return = Native_1.default.FFI_GroupSecretParams_decryptBlob(groupSecretParamsContents, groupSecretParamsContents.length, blobCiphertext, blobCiphertext.length, newContents, newContents.length);
         if (ffi_return == Native_1.FFI_RETURN_INPUT_ERROR) {

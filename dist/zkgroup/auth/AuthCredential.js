@@ -17,4 +17,4 @@ class AuthCredential extends ByteArray_1.default {
     }
 }
 exports.default = AuthCredential;
-AuthCredential.SIZE = 372;
+AuthCredential.SIZE = 404;

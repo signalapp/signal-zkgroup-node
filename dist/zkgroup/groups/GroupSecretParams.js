@@ -72,4 +72,4 @@ class GroupSecretParams extends ByteArray_1.default {
     }
 }
 exports.default = GroupSecretParams;
-GroupSecretParams.SIZE = 320;
+GroupSecretParams.SIZE = 384;

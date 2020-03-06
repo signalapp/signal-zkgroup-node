@@ -9,9 +9,10 @@ export default class ClientZkGroupCipher {
     constructor(groupSecretParams: GroupSecretParams);
     encryptUuid(uuid: UUIDType): UuidCiphertext;
     decryptUuid(uuidCiphertext: UuidCiphertext): UUIDType;
-    encryptProfileKey(profileKey: ProfileKey): ProfileKeyCiphertext;
-    encryptProfileKeyWithRandom(random: FFICompatArrayType, profileKey: ProfileKey): ProfileKeyCiphertext;
-    decryptProfileKey(profileKeyCiphertext: ProfileKeyCiphertext): ProfileKey;
+    encryptProfileKey(profileKey: ProfileKey, uuid: UUIDType): ProfileKeyCiphertext;
+    encryptProfileKeyWithRandom(random: FFICompatArrayType, profileKey: ProfileKey, uuid: UUIDType): ProfileKeyCiphertext;
+    decryptProfileKey(profileKeyCiphertext: ProfileKeyCiphertext, uuid: UUIDType): ProfileKey;
     encryptBlob(plaintext: FFICompatArrayType): FFICompatArrayType;
+    encryptBlobWithRandom(random: FFICompatArrayType, plaintext: FFICompatArrayType): FFICompatArrayType;
     decryptBlob(blobCiphertext: FFICompatArrayType): FFICompatArrayType;
 }

@@ -27,4 +27,4 @@ class ProfileKeyCommitment extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCommitment;
-ProfileKeyCommitment.SIZE = 64;
+ProfileKeyCommitment.SIZE = 96;

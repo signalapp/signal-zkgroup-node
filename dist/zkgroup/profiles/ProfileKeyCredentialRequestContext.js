@@ -27,4 +27,4 @@ class ProfileKeyCredentialRequestContext extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCredentialRequestContext;
-ProfileKeyCredentialRequestContext.SIZE = 360;
+ProfileKeyCredentialRequestContext.SIZE = 600;

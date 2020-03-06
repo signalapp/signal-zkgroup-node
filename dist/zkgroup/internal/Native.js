@@ -12,8 +12,8 @@ const rootPath = path_1.resolve(`${__dirname}/../../../`);
 // We need to do things differently if we are in an app.asar, common in the Electron world
 const libraryPath = path_1.join(rootPath.replace('app.asar', 'app.asar.unpacked'), 'libzkgroup');
 const library = ffi_napi_1.Library(libraryPath, {
-    'FFI_ProfileKey_getCommitment': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
-    'FFI_ProfileKey_getProfileKeyVersion': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
+    'FFI_ProfileKey_getCommitment': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
+    'FFI_ProfileKey_getProfileKeyVersion': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_ProfileKeyCommitment_getProfileKeyVersion': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_ProfileKeyCommitment_checkValidContents': ['int', [FFICompatArray_1.default, 'uint64']],
     'FFI_GroupSecretParams_generateDeterministic': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
@@ -24,9 +24,9 @@ const library = ffi_napi_1.Library(libraryPath, {
     'FFI_GroupSecretParams_checkValidContents': ['int', [FFICompatArray_1.default, 'uint64']],
     'FFI_GroupSecretParams_encryptUuid': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_GroupSecretParams_decryptUuid': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
-    'FFI_GroupSecretParams_encryptProfileKeyDeterministic': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
-    'FFI_GroupSecretParams_decryptProfileKey': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
-    'FFI_GroupSecretParams_encryptBlob': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
+    'FFI_GroupSecretParams_encryptProfileKeyDeterministic': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
+    'FFI_GroupSecretParams_decryptProfileKey': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
+    'FFI_GroupSecretParams_encryptBlobDeterministic': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_GroupSecretParams_decryptBlob': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_ServerSecretParams_generateDeterministic': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],
     'FFI_ServerSecretParams_getPublicParams': ['int', [FFICompatArray_1.default, 'uint64', FFICompatArray_1.default, 'uint64',]],

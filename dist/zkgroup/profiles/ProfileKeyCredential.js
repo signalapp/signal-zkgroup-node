@@ -17,4 +17,4 @@ class ProfileKeyCredential extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCredential;
-ProfileKeyCredential.SIZE = 160;
+ProfileKeyCredential.SIZE = 144;
