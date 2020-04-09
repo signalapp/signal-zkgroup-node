@@ -26,7 +26,7 @@ class AuthCredentialPresentation extends ByteArray_1.default {
         return new UuidCiphertext_1.default(newContents);
     }
     getRedemptionTime() {
-        const newContents = new FFICompatArray_1.default(new Buffer(4));
+        const newContents = new FFICompatArray_1.default(Buffer.alloc(4));
         const ffi_return = Native_1.default.FFI_AuthCredentialPresentation_getRedemptionTime(this.contents, this.contents.length, newContents, newContents.length);
         if (ffi_return != Native_1.FFI_RETURN_OK) {
             throw new ZkGroupError_1.default("FFI_RETURN!=OK");
