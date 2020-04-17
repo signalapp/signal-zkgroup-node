@@ -10,8 +10,8 @@ export default class ClientZkGroupCipher {
     encryptUuid(uuid: UUIDType): UuidCiphertext;
     decryptUuid(uuidCiphertext: UuidCiphertext): UUIDType;
     encryptProfileKey(profileKey: ProfileKey, uuid: UUIDType): ProfileKeyCiphertext;
-    encryptProfileKeyWithRandom(random: FFICompatArrayType, profileKey: ProfileKey, uuid: UUIDType): ProfileKeyCiphertext;
     decryptProfileKey(profileKeyCiphertext: ProfileKeyCiphertext, uuid: UUIDType): ProfileKey;
+    myArrayCopy(src: FFICompatArrayType, srcStart: number, dst: FFICompatArrayType, dstStart: number, len: number): void;
     encryptBlob(plaintext: FFICompatArrayType): FFICompatArrayType;
     encryptBlobWithRandom(random: FFICompatArrayType, plaintext: FFICompatArrayType): FFICompatArrayType;
     decryptBlob(blobCiphertext: FFICompatArrayType): FFICompatArrayType;

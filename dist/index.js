@@ -21,8 +21,6 @@ exports.AuthCredentialPresentation = AuthCredentialPresentation_1.default;
 // Groups
 var ClientZkGroupCipher_1 = require("./zkgroup/groups/ClientZkGroupCipher");
 exports.ClientZkGroupCipher = ClientZkGroupCipher_1.default;
-var ChangeSignature_1 = require("./zkgroup/groups/ChangeSignature");
-exports.ChangeSignature = ChangeSignature_1.default;
 var GroupIdentifier_1 = require("./zkgroup/groups/GroupIdentifier");
 exports.GroupIdentifier = GroupIdentifier_1.default;
 var GroupMasterKey_1 = require("./zkgroup/groups/GroupMasterKey");

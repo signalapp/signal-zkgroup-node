@@ -4,7 +4,6 @@ const ByteArray_1 = require("../internal/ByteArray");
 const FFICompatArray_1 = require("../internal/FFICompatArray");
 const InvalidInputException_1 = require("../errors/InvalidInputException");
 const ZkGroupError_1 = require("../errors/ZkGroupError");
-const VerificationFailedException_1 = require("../errors/VerificationFailedException");
 const Native_1 = require("../internal/Native");
 const GroupIdentifier_1 = require("./GroupIdentifier");
 class GroupPublicParams extends ByteArray_1.default {
@@ -26,16 +25,6 @@ class GroupPublicParams extends ByteArray_1.default {
         }
         return new GroupIdentifier_1.default(newContents);
     }
-    verifySignature(message, changeSignature) {
-        const changeSignatureContents = changeSignature.getContents();
-        const ffi_return = Native_1.default.FFI_GroupPublicParams_verifySignature(this.contents, this.contents.length, message, message.length, changeSignatureContents, changeSignatureContents.length);
-        if (ffi_return == Native_1.FFI_RETURN_INPUT_ERROR) {
-            throw new VerificationFailedException_1.default('FFI_RETURN_INPUT_ERROR');
-        }
-        if (ffi_return != Native_1.FFI_RETURN_OK) {
-            throw new ZkGroupError_1.default('FFI_RETURN!=OK');
-        }
-    }
 }
 exports.default = GroupPublicParams;
-GroupPublicParams.SIZE = 128;
+GroupPublicParams.SIZE = 96;

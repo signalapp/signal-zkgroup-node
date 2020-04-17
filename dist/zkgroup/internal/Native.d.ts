@@ -8,17 +8,15 @@ export declare const RANDOM_LENGTH = 32;
 interface NativeCalls {
     FFI_ProfileKey_getCommitment: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_ProfileKey_getProfileKeyVersion: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
-    FFI_ProfileKeyCommitment_getProfileKeyVersion: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ProfileKeyCommitment_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_GroupSecretParams_generateDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_GroupSecretParams_deriveFromMasterKey: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_GroupSecretParams_getMasterKey: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_GroupSecretParams_getPublicParams: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
-    FFI_GroupSecretParams_signDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_GroupSecretParams_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_GroupSecretParams_encryptUuid: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_GroupSecretParams_decryptUuid: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
-    FFI_GroupSecretParams_encryptProfileKeyDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type, param9: FFICompatArrayType, param10: UInt32Type) => IntType;
+    FFI_GroupSecretParams_encryptProfileKey: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_GroupSecretParams_decryptProfileKey: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_GroupSecretParams_encryptBlobDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_GroupSecretParams_decryptBlob: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
@@ -36,7 +34,6 @@ interface NativeCalls {
     FFI_ServerSecretParams_issueProfileKeyCredentialDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type, param9: FFICompatArrayType, param10: UInt32Type, param11: FFICompatArrayType, param12: UInt32Type) => IntType;
     FFI_ServerSecretParams_verifyProfileKeyCredentialPresentation: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_GroupPublicParams_getGroupIdentifier: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
-    FFI_GroupPublicParams_verifySignature: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_GroupPublicParams_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_ServerPublicParams_verifySignature: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_ServerPublicParams_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;

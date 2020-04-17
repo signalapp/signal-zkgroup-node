@@ -7,7 +7,6 @@ const ZkGroupError_1 = require("../errors/ZkGroupError");
 const IllegalArgumentException_1 = require("../errors/IllegalArgumentException");
 const Native_1 = require("../internal/Native");
 const Constants_1 = require("../internal/Constants");
-const ChangeSignature_1 = require("./ChangeSignature");
 const GroupMasterKey_1 = require("./GroupMasterKey");
 const GroupPublicParams_1 = require("./GroupPublicParams");
 class GroupSecretParams extends ByteArray_1.default {
@@ -58,18 +57,6 @@ class GroupSecretParams extends ByteArray_1.default {
         }
         return new GroupPublicParams_1.default(newContents);
     }
-    sign(message) {
-        const random = new FFICompatArray_1.default(crypto_1.randomBytes(Constants_1.RANDOM_LENGTH));
-        return this.signWithRandom(random, message);
-    }
-    signWithRandom(random, message) {
-        const newContents = new FFICompatArray_1.default(ChangeSignature_1.default.SIZE);
-        const ffi_return = Native_1.default.FFI_GroupSecretParams_signDeterministic(this.contents, this.contents.length, random, random.length, message, message.length, newContents, newContents.length);
-        if (ffi_return != Native_1.FFI_RETURN_OK) {
-            throw new ZkGroupError_1.default("FFI_RETURN!=OK");
-        }
-        return new ChangeSignature_1.default(newContents);
-    }
 }
 exports.default = GroupSecretParams;
-GroupSecretParams.SIZE = 384;
+GroupSecretParams.SIZE = 352;
