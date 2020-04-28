@@ -36,4 +36,4 @@ class ProfileKeyCredentialPresentation extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCredentialPresentation;
-ProfileKeyCredentialPresentation.SIZE = 936;
+ProfileKeyCredentialPresentation.SIZE = 713;

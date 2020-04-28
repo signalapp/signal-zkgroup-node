@@ -17,4 +17,4 @@ class AuthCredentialResponse extends ByteArray_1.default {
     }
 }
 exports.default = AuthCredentialResponse;
-AuthCredentialResponse.SIZE = 392;
+AuthCredentialResponse.SIZE = 361;

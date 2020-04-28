@@ -27,4 +27,4 @@ class GroupPublicParams extends ByteArray_1.default {
     }
 }
 exports.default = GroupPublicParams;
-GroupPublicParams.SIZE = 96;
+GroupPublicParams.SIZE = 97;

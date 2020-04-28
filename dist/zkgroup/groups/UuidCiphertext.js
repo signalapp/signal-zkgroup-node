@@ -17,4 +17,4 @@ class UuidCiphertext extends ByteArray_1.default {
     }
 }
 exports.default = UuidCiphertext;
-UuidCiphertext.SIZE = 64;
+UuidCiphertext.SIZE = 65;

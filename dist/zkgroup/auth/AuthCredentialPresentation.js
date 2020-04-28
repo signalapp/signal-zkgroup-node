@@ -35,4 +35,4 @@ class AuthCredentialPresentation extends ByteArray_1.default {
     }
 }
 exports.default = AuthCredentialPresentation;
-AuthCredentialPresentation.SIZE = 620;
+AuthCredentialPresentation.SIZE = 493;

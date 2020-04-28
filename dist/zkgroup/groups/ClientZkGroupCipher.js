@@ -72,7 +72,7 @@ class ClientZkGroupCipher {
     encryptBlobWithRandom(random, plaintext) {
         let paddedPlaintext = new FFICompatArray_1.default(plaintext.length + 4);
         this.myArrayCopy(plaintext, 0, paddedPlaintext, 4, plaintext.length);
-        const newContents = FFICompatArray_1.default(paddedPlaintext.length + 28);
+        const newContents = FFICompatArray_1.default(paddedPlaintext.length + 29);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
         const ffi_return = Native_1.default.FFI_GroupSecretParams_encryptBlobDeterministic(groupSecretParamsContents, groupSecretParamsContents.length, random, random.length, paddedPlaintext, paddedPlaintext.length, newContents, newContents.length);
         if (ffi_return != Native_1.FFI_RETURN_OK) {
@@ -81,7 +81,7 @@ class ClientZkGroupCipher {
         return newContents;
     }
     decryptBlob(blobCiphertext) {
-        const newContents = new FFICompatArray_1.default(blobCiphertext.length - 28);
+        const newContents = new FFICompatArray_1.default(blobCiphertext.length - 29);
         const groupSecretParamsContents = this.groupSecretParams.getContents();
         const ffi_return = Native_1.default.FFI_GroupSecretParams_decryptBlob(groupSecretParamsContents, groupSecretParamsContents.length, blobCiphertext, blobCiphertext.length, newContents, newContents.length);
         if (ffi_return == Native_1.FFI_RETURN_INPUT_ERROR) {

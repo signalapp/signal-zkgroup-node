@@ -17,4 +17,4 @@ class ProfileKeyCiphertext extends ByteArray_1.default {
     }
 }
 exports.default = ProfileKeyCiphertext;
-ProfileKeyCiphertext.SIZE = 64;
+ProfileKeyCiphertext.SIZE = 65;
