@@ -20,7 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ffi-napi": "2.4.5",
+    "ffi-napi": "2.5.0",
     "ref-array-napi": "1.2.0",
     "ref-napi": "1.4.2"
   },
