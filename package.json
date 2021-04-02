@@ -1,6 +1,6 @@
 {
   "name": "zkgroup",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "zero-knowledge group functionality",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,9 +20,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ffi-napi": "2.4.5",
-    "ref-array-napi": "1.2.0",
-    "ref-napi": "1.4.2"
+    "ffi-napi": "4.0.3",
+    "ref-array-napi": "1.2.1",
+    "ref-napi": "3.0.2"
   },
   "devDependencies": {
     "@types/chai": "4.2.7",
