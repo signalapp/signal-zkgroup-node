@@ -1,4 +1,4 @@
-import * as RefArray from 'ref-array-napi';
-declare const FFICompatArray: RefArray.ArrayType<number>;
+import ArrayType = require('ref-array-napi');
+declare const FFICompatArray: ArrayType<number>;
 export default FFICompatArray;
-export declare type FFICompatArrayType = RefArray.ArrayTypeInstance<number>;
+export declare type FFICompatArrayType = ReturnType<typeof FFICompatArray>;
