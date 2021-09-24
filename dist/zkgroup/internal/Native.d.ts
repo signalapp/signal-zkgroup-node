@@ -1,6 +1,7 @@
 import { FFICompatArrayType } from './FFICompatArray';
 declare type IntType = number;
 declare type UInt32Type = number;
+declare type UInt64Type = string;
 export declare const FFI_RETURN_OK = 0;
 export declare const FFI_RETURN_INTERNAL_ERROR = 1;
 export declare const FFI_RETURN_INPUT_ERROR = 2;
@@ -24,6 +25,8 @@ interface NativeCalls {
     FFI_ServerSecretParams_getPublicParams: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ServerSecretParams_signDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_ServerSecretParams_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
+    FFI_ServerSecretParams_issueReceiptCredentialDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: UInt64Type, param8: UInt64Type, param9: FFICompatArrayType, param10: UInt32Type) => IntType;
+    FFI_ServerSecretParams_verifyReceiptCredentialPresentation: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ServerPublicParams_receiveAuthCredential: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: IntType, param6: FFICompatArrayType, param7: UInt32Type, param8: FFICompatArrayType, param9: UInt32Type) => IntType;
     FFI_ServerPublicParams_createAuthCredentialPresentationDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type, param9: FFICompatArrayType, param10: UInt32Type) => IntType;
     FFI_ServerPublicParams_createProfileKeyCredentialRequestContextDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type, param9: FFICompatArrayType, param10: UInt32Type) => IntType;
@@ -33,6 +36,9 @@ interface NativeCalls {
     FFI_ServerSecretParams_verifyAuthCredentialPresentation: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
     FFI_ServerSecretParams_issueProfileKeyCredentialDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type, param9: FFICompatArrayType, param10: UInt32Type, param11: FFICompatArrayType, param12: UInt32Type) => IntType;
     FFI_ServerSecretParams_verifyProfileKeyCredentialPresentation: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
+    FFI_ServerPublicParams_createReceiptCredentialRequestContextDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
+    FFI_ServerPublicParams_receiveReceiptCredential: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
+    FFI_ServerPublicParams_createReceiptCredentialPresentationDeterministic: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type, param7: FFICompatArrayType, param8: UInt32Type) => IntType;
     FFI_GroupPublicParams_getGroupIdentifier: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_GroupPublicParams_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_ServerPublicParams_verifySignature: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type, param5: FFICompatArrayType, param6: UInt32Type) => IntType;
@@ -50,6 +56,12 @@ interface NativeCalls {
     FFI_ProfileKeyCredentialPresentation_getUuidCiphertext: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ProfileKeyCredentialPresentation_getProfileKeyCiphertext: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ProfileKeyCredentialPresentation_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
+    FFI_ReceiptCredentialRequestContext_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
+    FFI_ReceiptCredentialRequestContext_getRequest: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
+    FFI_ReceiptCredentialRequest_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
+    FFI_ReceiptCredentialResponse_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
+    FFI_ReceiptCredential_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
+    FFI_ReceiptCredentialPresentation_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
     FFI_UuidCiphertext_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_ProfileKeyCiphertext_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
 }

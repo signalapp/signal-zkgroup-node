@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// Root
 var ServerPublicParams_1 = require("./zkgroup/ServerPublicParams");
 exports.ServerPublicParams = ServerPublicParams_1.default;
 var ServerSecretParams_1 = require("./zkgroup/ServerSecretParams");
@@ -62,3 +61,20 @@ var ProfileKeyCredentialResponse_1 = require("./zkgroup/profiles/ProfileKeyCrede
 exports.ProfileKeyCredentialResponse = ProfileKeyCredentialResponse_1.default;
 var ProfileKeyVersion_1 = require("./zkgroup/profiles/ProfileKeyVersion");
 exports.ProfileKeyVersion = ProfileKeyVersion_1.default;
+// Receipts
+var ClientZkReceiptOperations_1 = require("./zkgroup/receipts/ClientZkReceiptOperations");
+exports.ClientZkReceiptOperations = ClientZkReceiptOperations_1.default;
+var ServerZkReceiptOperations_1 = require("./zkgroup/receipts/ServerZkReceiptOperations");
+exports.ServerZkReceiptOperations = ServerZkReceiptOperations_1.default;
+var ReceiptCredential_1 = require("./zkgroup/receipts/ReceiptCredential");
+exports.ReceiptCredential = ReceiptCredential_1.default;
+var ReceiptCredentialPresentation_1 = require("./zkgroup/receipts/ReceiptCredentialPresentation");
+exports.ReceiptCredentialPresentation = ReceiptCredentialPresentation_1.default;
+var ReceiptCredentialRequest_1 = require("./zkgroup/receipts/ReceiptCredentialRequest");
+exports.ReceiptCredentialRequest = ReceiptCredentialRequest_1.default;
+var ReceiptCredentialRequestContext_1 = require("./zkgroup/receipts/ReceiptCredentialRequestContext");
+exports.ReceiptCredentialRequestContext = ReceiptCredentialRequestContext_1.default;
+var ReceiptCredentialResponse_1 = require("./zkgroup/receipts/ReceiptCredentialResponse");
+exports.ReceiptCredentialResponse = ReceiptCredentialResponse_1.default;
+var ReceiptSerial_1 = require("./zkgroup/receipts/ReceiptSerial");
+exports.ReceiptSerial = ReceiptSerial_1.default;
