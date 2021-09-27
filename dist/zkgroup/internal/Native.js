@@ -59,6 +59,8 @@ const library = ffi_napi_1.Library(libraryPath, {
     'FFI_ProfileKeyCredentialRequest_checkValidContents': ['int', [FFICompatArray_1.default, 'uint32']],
     'FFI_ProfileKeyCredentialResponse_checkValidContents': ['int', [FFICompatArray_1.default, 'uint32']],
     'FFI_ProfileKeyCredential_checkValidContents': ['int', [FFICompatArray_1.default, 'uint32']],
+    'FFI_ReceiptCredential_getReceiptExpirationTime': ['int', [FFICompatArray_1.default, 'uint32', FFICompatArray_1.default, 'uint32']],
+    'FFI_ReceiptCredential_getReceiptLevel': ['int', [FFICompatArray_1.default, 'uint32', FFICompatArray_1.default, 'uint32']],
     'FFI_ProfileKeyCredentialPresentation_getUuidCiphertext': ['int', [FFICompatArray_1.default, 'uint32', FFICompatArray_1.default, 'uint32',]],
     'FFI_ProfileKeyCredentialPresentation_getProfileKeyCiphertext': ['int', [FFICompatArray_1.default, 'uint32', FFICompatArray_1.default, 'uint32',]],
     'FFI_ProfileKeyCredentialPresentation_checkValidContents': ['int', [FFICompatArray_1.default, 'uint32']],
