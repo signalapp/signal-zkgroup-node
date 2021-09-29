@@ -64,6 +64,9 @@ interface NativeCalls {
     FFI_ReceiptCredential_getReceiptExpirationTime: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ReceiptCredential_getReceiptLevel: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_ReceiptCredentialPresentation_checkValidContents: (param1: FFICompatArrayType, param2: UInt32Type) => IntType;
+    FFI_ReceiptCredentialPresentation_getReceiptExpirationTime: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
+    FFI_ReceiptCredentialPresentation_getReceiptLevel: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
+    FFI_ReceiptCredentialPresentation_getReceiptSerial: (param1: FFICompatArrayType, param2: UInt32Type, param3: FFICompatArrayType, param4: UInt32Type) => IntType;
     FFI_UuidCiphertext_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
     FFI_ProfileKeyCiphertext_checkValidContents: (param2: FFICompatArrayType, param3: UInt32Type) => IntType;
 }
